@@ -16,6 +16,7 @@ import mindustry.graphics.MultiPacker.*;
 import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.meta.*;
+import mindustry.content.*; // we only really need Planets
 
 import static mindustry.Vars.*;
 
@@ -93,7 +94,7 @@ public abstract class UnlockableContent extends MappableContent{
     }
 
     public boolean isOnPlanet(@Nullable Planet planet){
-        return planet == null || shownPlanets.isEmpty() || shownPlanets.contains(planet);
+        return planet == null || shownPlanets.isEmpty() || shownPlanets.contains(planet) || planet == Planets.sun; // Planets.sun indicates mixtech use
     }
 
     public int getLogicId(){
